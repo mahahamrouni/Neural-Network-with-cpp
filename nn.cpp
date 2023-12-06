@@ -118,7 +118,7 @@ public:
     double ta;
     SequentialNN compound_nn;
 
-    Optimizer(double ta, const SequentialNN& compound_nn) : ta(ta), compound_nn(compound_nn) {}
+    Optimizer(double ta, const SequentialNN& compound_nn) : ta(ta), compound_nn(compound_nn) {} //Le constructeur prend en paramètre le taux d'apprentissage (ta) et une référence constante à un objet SequentialNN (compound_nn). Il initialise les membres de la classe ta et compound_nn avec les valeurs fournies.
 
     void step() {
         for (auto& block : compound_nn.blocks) {
@@ -139,7 +139,7 @@ vector<int> random_batch_indices(int batch_size, int data_size) {
     return indices;
 }
 
- vector<vector<int>> data(60000, vector<int>(784, 0));
+ vector<vector<int>> data(60000, vector<int>(784, 0)); //initialisation des 60.000 images d'apprentissage,28*28=784pixels en noir et blanc
     for (int i = 0; i < 60000; ++i) {
         for (int j = 0; j < 784; ++j) {
             data[i][j] = rand() % 256;
