@@ -30,9 +30,9 @@ Eigen::MatrixXd backward(const Eigen::MatrixXd& gradout) {
 // le modèle séquentiel
 class SequentialNN {
 public:
-    std::vector<MLP> blocks;
+    vector<MLP> blocks;
 
-    SequentialNN(const std::vector<MLP>& blocks) : blocks(blocks) {}
+    SequentialNN(const vector<MLP>& blocks) : blocks(blocks) {}
 
     Eigen::MatrixXd forward(const Eigen::MatrixXd& x) {
         Eigen::MatrixXd result = x;
