@@ -45,7 +45,7 @@ public:
     Eigen::MatrixXd backward(const Eigen::MatrixXd& gradout) {
         Eigen::MatrixXd result = gradout;
         for (auto i = blocks.rbegin(); i != blocks.rend(); ++i) {
-            result = it->backward(result);
+            result = i->backward(result);
         }
         return result;
     }
